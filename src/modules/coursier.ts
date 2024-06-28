@@ -75,6 +75,7 @@ export async function launch(
   core.startGroup(`Launching ${app}`)
 
   const launchArguments = [
+    '-J-Dhttps.proxyHost=proxy.core.fra.aws.dbgcloud.io -J-Dhttps.proxyPort=3128',
     'launch',
     '--contrib',
     '-r',
