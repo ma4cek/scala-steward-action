@@ -34576,7 +34576,7 @@ async function install() {
         await lib_exec.exec('gzip', ['-d', zip], { silent: true });
         await lib_exec.exec('chmod', ['+x', external_path_.join(binary, 'cs')], { silent: true });
         lib_core.addPath(binary);
-        await lib_exec.exec('java -Dhttps.proxyHost=proxy.core.fra.aws.dbgcloud.io -Dhttps.proxyPort=3128 -jar $(which coursier)', ['install', 'scalafmt', 'scalafix', 'scala-cli', '--install-dir', binary], {
+        await lib_exec.exec('cs -J-Dhttps.proxyHost=proxy.core.fra.aws.dbgcloud.io -J-Dhttps.proxyPort=3128', ['install', 'scalafmt', 'scalafix', 'scala-cli', '--install-dir', binary], {
             silent: true,
             listeners: { stdline: lib_core.debug, errline: lib_core.debug },
         });

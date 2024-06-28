@@ -31,7 +31,7 @@ export async function install(): Promise<void> {
     core.addPath(binary)
 
     await exec.exec(
-      'java -Dhttps.proxyHost=proxy.core.fra.aws.dbgcloud.io -Dhttps.proxyPort=3128 -jar $(which coursier)',
+      'cs -J-Dhttps.proxyHost=proxy.core.fra.aws.dbgcloud.io -J-Dhttps.proxyPort=3128',
       ['install', 'scalafmt', 'scalafix', 'scala-cli', '--install-dir', binary],
       {
         silent: true,
