@@ -92451,7 +92451,7 @@ async function run() {
             argument('--cache-ttl', inputs.steward.cacheTtl),
             argument('--max-buffer-size', inputs.steward.maxBufferSize),
             argument('--scalafix-migrations', inputs.migrations.scalafix),
-            argument('--artifact-migrations', inputs.migrations.artifacts),
+            argument('--artifact-migrations', nonEmpty("artifact-migrations.conf")),
             argument('--repo-config', inputs.steward.defaultConfiguration),
             argument('--github-app-id', inputs.github.app && !inputs.github.app.authOnly ? inputs.github.app.id : undefined),
             argument('--github-app-key-file', inputs.github.app && !inputs.github.app.authOnly ? workspace.app_pem : undefined),
